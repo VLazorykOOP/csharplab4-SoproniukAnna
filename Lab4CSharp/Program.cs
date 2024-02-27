@@ -1,42 +1,81 @@
-﻿// See https://aka.ms/new-console-template for more information
-/// <summary>
-///  Top-level statements 
-///  Код програми (оператори)  вищого рівня
-/// </summary>
-///
-Console.WriteLine("Lab4 C# ");
-AnyFunc();
+﻿
+using Lab4CSharp;
+using System.Reflection.Metadata.Ecma335;
+using System.Xml;
 
-/// <summary>
-/// 
-///  Top-level statements must precede namespace and type declarations.
-/// At the top-level methods/functions can be defined and used
-/// На верхньому рівні можна визначати та використовувати методи/функції
-/// </summary>
-void AnyFunc()
+internal class Program
 {
-    Console.WriteLine(" Some function in top-level");
+    private static void Main(string[] args)
+    {
+        Console.WriteLine("             Lab 4 ");
+        Console.WriteLine("             Task 1");
+        Console.WriteLine("             Part 1(Indexer)");
+
+
+        Trapeze trapeze = new Trapeze();
+        //get
+        Console.WriteLine(trapeze[0]); 
+        Console.WriteLine(trapeze[1]); 
+        Console.WriteLine(trapeze[2]);
+        Console.WriteLine(trapeze[3]); 
+        //set
+        trapeze[0] = 10; 
+        Console.WriteLine(trapeze[0]);
+
+
+
+        Console.WriteLine();
+        Console.WriteLine("             Part 2");
+        Console.WriteLine("             Operator ++ and operator --");
+        Trapeze trapeze1 = new Trapeze(1, 7, 3, 4);
+        Console.WriteLine("Original Trapeze:");
+        trapeze1.DisplayLengths();
+
+        trapeze1++; // Increment values of 'a' and 'b'
+        Console.WriteLine("\nAfter ++ operator:");
+        trapeze1.DisplayLengths();
+
+        trapeze1--; // Decrement values of 'a' and 'b'
+        Console.WriteLine("\nAfter -- operator:");
+        trapeze1.DisplayLengths();
+
+
+        Console.WriteLine();
+        Console.WriteLine("             Operator false and operator true");
+        Trapeze trapeze2 = new Trapeze(3, 8, 2, 0);
+        if (trapeze2) 
+            Console.WriteLine("True");
+        else 
+            Console.WriteLine("False");
+
+        if (trapeze) 
+            Console.WriteLine("True");
+        else 
+            Console.WriteLine("False");
+
+
+        Console.WriteLine();
+        Console.WriteLine("             Operator * and scalar");
+        int scalar = 3;
+        Trapeze result = trapeze1 * scalar;
+
+        Console.WriteLine("Original Trapeze:");
+        trapeze1.DisplayLengths();
+
+        Console.WriteLine($"\nTrapeze multiplied by {scalar}:");
+        result.DisplayLengths();
+
+
+        Console.WriteLine();
+        Console.WriteLine("             To string and from string");
+        string trapezeString = (string)trapeze1;
+        Console.WriteLine("To string:" + trapezeString);
+
+
+        trapezeString = "(1, 2, 3, 4)";
+        Trapeze newTrapeze = (Trapeze)trapezeString;
+
+        Console.WriteLine("\nConverted Trapeze from string:");
+        newTrapeze.DisplayLengths();
+    }
 }
-Console.WriteLine("Problems 1 ");
-AnyFunc();
-//  приклад класів
-UserClass cl = new UserClass();
-cl.Name = " UserClass top-level ";
-Lab4CSharp.UserClass cl2 = new Lab4CSharp.UserClass();
-cl2.Name = " UserClass namespace Lab4CSharp ";
-Console.WriteLine(cl + "   " + cl2 + "   ");
-
-
-
-/// <summary>
-/// 
-/// Top-level statements must precede namespace and type declarations.
-/// Оператори верхнього рівня мають передувати оголошенням простору імен і типу.
-/// Створення класу(ів) або оголошенням простору імен є закіченням  іструкцій верхнього рівня
-/// 
-/// </summary>
-
-class UserClass
-{
-    public string Name { get; set; }
-};
