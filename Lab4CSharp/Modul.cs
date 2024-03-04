@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Lab4CSharp
 {
-    internal class UserClass
+   /*internal class UserClass
     {
         public string Name { get; set; }
-    }
+    }*/
 }

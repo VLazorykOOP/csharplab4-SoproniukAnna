@@ -48,7 +48,7 @@ internal class Program
         else 
             Console.WriteLine("False");
 
-        if (trapeze) 
+        if (trapeze1) 
             Console.WriteLine("True");
         else 
             Console.WriteLine("False");
@@ -77,5 +77,9 @@ internal class Program
 
         Console.WriteLine("\nConverted Trapeze from string:");
         newTrapeze.DisplayLengths();
+
+
+
+        
     }
 }
