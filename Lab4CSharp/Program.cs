@@ -77,9 +77,5 @@ internal class Program
 
         Console.WriteLine("\nConverted Trapeze from string:");
         newTrapeze.DisplayLengths();
-
-
-
-        
     }
 }
